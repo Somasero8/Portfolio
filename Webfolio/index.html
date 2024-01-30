@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charSet="utf-8"/>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Stephen Carl Opeña Portfolio</title>
         <link rel="stylesheet" href="main.css">
@@ -11,17 +12,21 @@
         <script src="https://kit.fontawesome.com/f0d9afbc5a.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!------------Home-------------> 
     <div id="home">
         <div class="container">
+             <!------------nav-------------> 
             <nav>
             <img src="images/monozokuri.png" class="logo">
-             <ul>
+             <ul id="sidemenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
              </ul>
+             <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
         <div class="header-text">
             <p>UX/UI and Graphic Designer</p>
@@ -30,6 +35,7 @@
         </div>
         </div>
     </div>
+      <!------------about------------->  
     <div id="about">
         <div class="container">
                 <div class="row">
@@ -59,16 +65,16 @@
 
                         <div class="tab-contents" id="experience">
                             <ul>
-                                <li><span>2023-Present</span></br>Freelance Graphic and Web Designer</li>
+                                <li><span>2023 - Present</span></br>Freelance Graphic and Web Designer</li>
                                 <li><span>2022 - Present</span></br>Advertising and Promotions Officer - Mother Rita MPC</li>
-                                <li><span>2020-2021</span></br> Sales Advisor - Concentrix Makati Phils. - Sprint Account </li>
+                                <li><span>2020 - 2021</span></br> Sales Advisor - Concentrix Makati Phils. - Sprint Account </li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="education">
                             <ul>
                                 <li><span>Tertiary - 2020</span></br>BS Computer Engineering - President Ramon Magsaysay State University</li>
                                 <li><span>High-School - 2014</span></br>Computer Major Candelaria School of Fisheries</li>
-                                <li><span>Elementary-2007</span></br> Amado Barrera Educational Center </li>
+                                <li><span>Elementary - 2007</span></br> Amado Barrera Educational Center </li>
                             </ul>
                         </div>
                     </div>
@@ -172,6 +178,38 @@
                 </div>
             </div>
         </div>
+        <a href="https://www.behance.net/stephencarlopea" class="btn">See More</a>
+    </div>
+    <!------Contact------->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>openastephen@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+63915-165-5487</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/stephencarl.opena"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/isteeeeeeph/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@serokunph"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://github.com/Somasero8"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="" download class="btn2">Download-CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name"  placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Messge"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Stephen. Powered by VSCode and GiHub.</p>
+        </div>
     </div>
 
 
@@ -190,6 +228,20 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+    
+
 
 </script>
 
