@@ -37,5 +37,4 @@ Host your portfolio website on platforms like GitHub Pages, Netlify, or Vercel. 
 Contributing
 Contributions are welcome! If you have suggestions, improvements, or bug fixes, please submit an issue or a pull request.
 
-License
-This project is licensed under the MIT License. Feel free to use and modify the code for your own portfolio.
+Feel free to use and modify the code for your own portfolio.
