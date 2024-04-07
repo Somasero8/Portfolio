@@ -31,7 +31,7 @@
         <div class="header-text">
             <p>UX/UI and Graphic Designer</p>
             <h1>Hi! My name is <span>Stephen Carl</span><br>
-                 from Phillipines!</h1>
+                 from Philippines!</h1>
         </div>
         </div>
     </div>
@@ -91,12 +91,7 @@
                 <div class="service">
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
-                <p>Unlock the power of a compeling online presence with my Web Design
-                    Services. I craft visually stunning and user friendly websites tailored
-                    to your brand. Sleek landing pages and website portfolios, blending
-                    creativity with technical excellence to deliver a seamless digital
-                    experience. Elevate your brand with a website that not only captivates
-                    but converts. Let's bring your vision to life in the digital realm!
+                <p> Let's bring your vision to life in the digital realm!
                 </p>
                 <a href="#">Learn More</a>
             </div>
@@ -104,13 +99,7 @@
             <div class="service">
                 <i class="fa-solid fa-crop"></i>
                 <h2>Logo and Branding</h2>
-                <p>As a freelance graphic designer, I specialize in crafting distinctive
-                    logos and comprehensive branding solutions for individuals and businesses.
-                    Your brand deserves to stand out in a crowded digital landscape, and
-                    I'm here to bring your vision to life. From creating a memorable logo that
-                    encapsulates your identity to designing a cohesive brand identity that leaves
-                    a lasting impact, my goal is to help you make a strong visual statement.
-                    Let's collaborate to build a brand that reflects your unique story and
+                <p>Let's collaborate to build a brand that reflects your unique story and
                     sets you apart in the market.
                 </p>
                 <a href="#">Learn More</a>
@@ -119,12 +108,7 @@
             <div class="service">
                 <i class="fa-solid fa-photo-film"></i>
                 <h2>Graphic Designing</h2>
-                <p>Whether you're a startup, small business, or an individual looking to
-                    enhance your visual presence, I offer tailored graphic design solutions.
-                    Proficient in Adobe Photoshop and Illustrator, I bring creativity and
-                    precision to every project. From striking logos to captivating marketing
-                    collateral, let's collaborate to bring your vision to life and make a
-                    lasting impression. Elevate your brand aesthetics with my personalized
+                <p>Elevate your brand aesthetics with my personalized
                     graphic design services.
                 </p>
                 <a href="#">Learn More</a>
@@ -198,12 +182,14 @@
                     <a href="" download class="btn2">Download-CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name"  placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Messge"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn2">Submit</button>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn2" onclick = "clearText()"
+                            >Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -228,7 +214,6 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
-
 </script>
 
 <script>
@@ -245,5 +230,27 @@
 
 </script>
 
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwQ9l-h5Bw5qMnQUabQAqBEYEN1ZCfOErBGhHziwi5v2bo8jCb9GCsPqREyxD3hCi9iUw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+    var frm = document.getElementsByName('submit-to-google-sheet')[0];
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent succesfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },2000)
+            frm.reset();
+            return false;
+    })
+        .catch(error => console.error('Error!', error.message))
+    
+})
+    
+  </script>
     </body>
 </html>
